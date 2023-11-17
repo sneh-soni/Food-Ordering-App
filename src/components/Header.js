@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 const Header = () => {
-  console.log("Header Rendered");
+  const [logBtn, setLogBtn] = useState("LoggedOut");
+
   return (
     <div className="flex justify-between h-16 px-5 mb-5">
       <div className="flex gap-2 items-center">
@@ -18,6 +21,11 @@ const Header = () => {
           <li>Cart</li>
         </ul>
       </div>
+      {logBtn === "LoggedOut" ? (
+        <button onClick={setLogBtn("LoggedIn")}>log In</button>
+      ) : (
+        <button onClick={setLogBtn("LoggedOut")}>log Out</button>
+      )}
     </div>
   );
 };

@@ -49,7 +49,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="flex flex-wrap gap-10 justify-center">
+      <div className="flex flex-wrap gap-3 justify-center">
         {restaurentList.length === 0 ? (
           <h1>No Restaurents Found</h1>
         ) : (

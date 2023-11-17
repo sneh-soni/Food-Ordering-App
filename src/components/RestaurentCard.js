@@ -1,5 +1,4 @@
 const RestaurentCard = ({ restaurent }) => {
-  console.log("Restaurent Card Rendered");
   return (
     <div className="h-60 w-1/6 border border-black p-1">
       <img
