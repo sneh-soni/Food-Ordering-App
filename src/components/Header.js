@@ -22,9 +22,9 @@ const Header = () => {
         </ul>
       </div>
       {logBtn === "LoggedOut" ? (
-        <button onClick={setLogBtn("LoggedIn")}>log In</button>
+        <button onClick={() => setLogBtn("LoggedIn")}>logIn</button>
       ) : (
-        <button onClick={setLogBtn("LoggedOut")}>log Out</button>
+        <button onClick={() => setLogBtn("LoggedOut")}>logOut</button>
       )}
     </div>
   );
