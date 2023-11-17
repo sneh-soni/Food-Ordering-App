@@ -1,17 +1,18 @@
 const RestaurentCard = ({ restaurent }) => {
   console.log("Restaurent Card Rendered");
   return (
-    <div className="h-52 w-1/6 border border-black p-1">
+    <div className="h-60 w-1/6 border border-black p-1">
       <img
-        className="h-2/3 w-full"
-        src={restaurent.image}
-        alt={restaurent.name}
+        className="h-1/2 w-full"
+        src={restaurent.strCategoryThumb}
+        alt={restaurent.strCategory}
       />
-      <div className="flex justify-between my-2">
-        <p className="text-xl font-bold">{restaurent.name}</p>
-        <p>{restaurent.rating} *</p>
+      <div className="flex justify-between my-1">
+        <p className="text-xl font-bold">{restaurent.strCategory}</p>
       </div>
-      <p className="text-lg font-semibold">{restaurent.price} Rs</p>
+      <p className="text-xs h-1/3 overflow-hidden">
+        {restaurent.strCategoryDescription}
+      </p>
     </div>
   );
 };
