@@ -33,7 +33,7 @@ const Body = () => {
     setRestaurentList(filteredRestaurants);
   };
 
-  return allRestaurents.length === 0 ? ( // or restaurentList.length === 0 ?
+  return allRestaurents?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
@@ -50,9 +50,17 @@ const Body = () => {
         </button>
       </div>
       <div className="flex flex-wrap gap-10 justify-center">
-        {restaurentList.map((restaurent) => (
-          <RestaurentCard restaurent={restaurent} key={restaurent.idCategory} />
-        ))}
+        {restaurentList.length === 0 ? (
+          <h1>No Restaurents Found</h1>
+        ) : (
+          restaurentList.map((restaurent) => (
+            <RestaurentCard
+              restaurent={restaurent}
+              key={restaurent.idCategory}
+            />
+          ))
+        )}
+        ;
       </div>
     </>
   );
