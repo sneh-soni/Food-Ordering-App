@@ -1,6 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurentList, setRestaurentList] = useState([]);
@@ -17,6 +18,7 @@ const Body = () => {
           throw new Error("Wrong Data");
         }
         const fetchedData = await response.json();
+        console.log(fetchedData);
         setRestaurentList(fetchedData.categories);
         setAllRestaurents(fetchedData.categories);
       } catch (error) {
@@ -37,7 +39,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="flex flex-wrap justify-center my-5 gap-2">
+      <div className="flex w-full flex-wrap justify-center my-5 gap-2">
         <input
           className="border border-black px-2"
           type="text"
@@ -49,15 +51,14 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="flex flex-wrap gap-3 justify-center">
+      <div className="flex gap-3 flex-wrap">
         {restaurentList.length === 0 ? (
           <h1>No Restaurents Found</h1>
         ) : (
           restaurentList.map((restaurent) => (
-            <RestaurentCard
-              restaurent={restaurent}
-              key={restaurent.idCategory}
-            />
+            <Link to={"/" + restaurent.idCategory} key={restaurent.idCategory}>
+              <RestaurentCard restaurent={restaurent} />
+            </Link>
           ))
         )}
       </div>
