@@ -20,13 +20,13 @@ const RestarentMenu = () => {
   return !res ? (
     <Shimmer />
   ) : (
-    <>
-      <div>
+    <div className="w-full flex justify-center">
+      <div className="w-3/4 flex flex-col justify-center items-center">
         <img src={res.strCategoryThumb} />
-        <h2>{res.strCategory}</h2>
-        <h3>{res.strCategoryDescription}</h3>
+        <h2 className="font-bold text-2xl my-3">{res.strCategory}</h2>
+        <h3 className="font-semibold w-1/2">{res.strCategoryDescription}</h3>
       </div>
-    </>
+    </div>
   );
 };
 

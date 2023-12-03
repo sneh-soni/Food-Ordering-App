@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [logBtn, setLogBtn] = useState("LoggedOut");
@@ -16,7 +17,10 @@ const Header = () => {
       <div className="flex w-1/4 gap-3 justify-center items-center">
         <ul className="flex gap-5">
           <li>Home</li>
-          <li>About Us</li>
+
+          <li>
+            <Link to={"about"}>About Us</Link>
+          </li>
         </ul>
       </div>
       <div className="flex gap-3 w-1/4 justify-center items-center">

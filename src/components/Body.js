@@ -38,8 +38,8 @@ const Body = () => {
   return allRestaurents?.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
-      <div className="flex w-full flex-wrap justify-center my-5 gap-2">
+    <div className="flex flex-col justify-center items-center">
+      <div className="flex w-full justify-center my-5 gap-2">
         <input
           className="border border-black px-2"
           type="text"
@@ -51,18 +51,23 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="flex gap-3 flex-wrap">
-        {restaurentList.length === 0 ? (
-          <h1>No Restaurents Found</h1>
-        ) : (
-          restaurentList.map((restaurent) => (
-            <Link to={"/" + restaurent.idCategory} key={restaurent.idCategory}>
-              <RestaurentCard restaurent={restaurent} />
-            </Link>
-          ))
-        )}
+      <div className="flex w-full">
+        <div className="flex gap-3 w-1/6 flex-wrap">
+          {restaurentList.length === 0 ? (
+            <h1>No Restaurents Found</h1>
+          ) : (
+            restaurentList.map((restaurent) => (
+              <Link
+                to={"/" + restaurent.idCategory}
+                key={restaurent.idCategory}
+              >
+                <RestaurentCard restaurent={restaurent} />
+              </Link>
+            ))
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,8 +1,8 @@
 const RestaurentCard = ({ restaurent }) => {
   return (
-    <div className="h-60 w-1/6 border border-black p-1">
+    <div className="h-60 w-full border border-black p-1">
       <img
-        className="h-1/2 w-full border border-black bg-gray-200"
+        className="h-1/2 border border-black bg-gray-200"
         src={restaurent.strCategoryThumb}
         alt={restaurent.strCategory}
       />
