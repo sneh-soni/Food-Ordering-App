@@ -16,15 +16,18 @@ const Header = () => {
       </div>
       <div className="flex w-1/4 gap-3 justify-center items-center">
         <ul className="flex gap-5">
-          <li>Home</li>
-
+          <Link to={"/"}>
+            <li>Home</li>
+          </Link>
           <li>
             <Link to={"about"}>About Us</Link>
           </li>
         </ul>
       </div>
       <div className="flex gap-3 w-1/4 justify-center items-center">
-        <p>Cart</p>
+        <Link to={"Cart"}>
+          <p>Cart</p>
+        </Link>
         {logBtn === "LoggedOut" ? (
           <button
             className="bg-gray-200 px-4 py-2 w-1/3"
