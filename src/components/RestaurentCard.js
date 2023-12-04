@@ -1,4 +1,4 @@
-const RestaurentCard = ({ restaurent }) => {
+const RestaurentCard = (restaurent) => {
   return (
     <div className="h-60 w-full border border-black p-1">
       <img
