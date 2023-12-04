@@ -1,4 +1,4 @@
-// First Custom Hook ==> When Online / Offline
+// Find Online / Offline
 
 import { useEffect, useState } from "react";
 
