@@ -22,6 +22,9 @@ const Header = () => {
           <li>
             <Link to={"about"}>About Us</Link>
           </li>
+          <li>
+            <Link to={"Accordion"}>Accordion</Link>
+          </li>
         </ul>
       </div>
       <div className="flex gap-3 w-1/4 justify-center items-center">

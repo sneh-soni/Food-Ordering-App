@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,17 +8,20 @@ import Error from "./components/Error";
 import RestaurentMenu from "./components/RestaurentMenu";
 import { lazy, Suspense } from "react";
 import Shimmer from "./components/Shimmer";
+import Accordion from "./components/Accordion";
+import Context from "./utils/Context";
 
 const Cart = lazy(() => import("./components/Cart"));
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
+  const [text, setText] = useState("Default Text");
   return (
-    <>
+    <Context.Provider value={{ data: text, setText: setText }}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Context.Provider>
   );
 };
 
@@ -55,6 +58,10 @@ const appRouter = createBrowserRouter([
             </Suspense>
           </>
         ),
+      },
+      {
+        path: "Accordion",
+        element: <Accordion />,
       },
     ],
   },
