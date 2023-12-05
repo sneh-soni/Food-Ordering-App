@@ -5,11 +5,6 @@ import Search from "./Search";
 import Restaurents from "./Restaurents";
 
 const Body = () => {
-  const status = useOnline();
-  if (!status) {
-    return <h1>Oops! You are Offline</h1>;
-  }
-
   const [restaurentList, setRestaurentList] = useState([]);
   const [allRestaurents, setAllRestaurents] = useState([]);
 
@@ -24,6 +19,11 @@ const Body = () => {
     }
     fetchData();
   }, []);
+
+  const status = useOnline();
+  if (!status) {
+    return <h1>Oops! You are Offline</h1>;
+  }
 
   return allRestaurents?.length === 0 ? (
     <Shimmer />
