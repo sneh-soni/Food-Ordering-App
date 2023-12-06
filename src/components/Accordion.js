@@ -8,7 +8,9 @@ const Section = ({ name, description, isVisible, setIsVisible }) => {
         <div>
           <button
             className="text-lg underline"
-            onClick={() => setIsVisible(false)}
+            onClick={() => {
+              setIsVisible(false);
+            }}
           >
             Hide
           </button>
@@ -37,25 +39,33 @@ const Accordion = () => {
         name="Section_01"
         description={description}
         isVisible={visibleSection == "Section_01"}
-        setIsVisible={() => setVisibleSection("Section_01")}
+        setIsVisible={(isVisible) => {
+          isVisible ? setVisibleSection("Section_01") : setVisibleSection("");
+        }}
       />
       <Section
         name="Section_02"
         description={description}
         isVisible={visibleSection == "Section_02"}
-        setIsVisible={() => setVisibleSection("Section_02")}
+        setIsVisible={(isVisible) => {
+          isVisible ? setVisibleSection("Section_02") : setVisibleSection("");
+        }}
       />
       <Section
         name="Section_03"
         description={description}
         isVisible={visibleSection == "Section_03"}
-        setIsVisible={() => setVisibleSection("Section_03")}
+        setIsVisible={(isVisible) => {
+          isVisible ? setVisibleSection("Section_03") : setVisibleSection("");
+        }}
       />
       <Section
         name="Section_04"
         description={description}
         isVisible={visibleSection == "Section_04"}
-        setIsVisible={() => setVisibleSection("Section_04")}
+        setIsVisible={(isVisible) => {
+          isVisible ? setVisibleSection("Section_04") : setVisibleSection("");
+        }}
       />
     </div>
   );
