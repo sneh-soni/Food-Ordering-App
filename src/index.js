@@ -10,6 +10,8 @@ import { lazy, Suspense } from "react";
 import Shimmer from "./components/Shimmer";
 import Accordion from "./components/Accordion";
 import Context from "./utils/Context";
+import { Provider } from "react-redux";
+import Store from "./utils/Store";
 
 const Cart = lazy(() => import("./components/Cart"));
 const About = lazy(() => import("./components/About"));
@@ -17,11 +19,13 @@ const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   const [text, setText] = useState("Default Text");
   return (
-    <Context.Provider value={{ data: text, setText: setText }}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </Context.Provider>
+    <Provider store={Store}>
+      <Context.Provider value={{ data: text, setText: setText }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Context.Provider>
+    </Provider>
   );
 };
 

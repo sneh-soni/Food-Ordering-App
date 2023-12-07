@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [logBtn, setLogBtn] = useState("LoggedOut");
+
+  const cartItems = useSelector((Store) => Store.cart.items);
 
   return (
     <div className="flex justify-between items-center h-16 px-5 mb-5">
@@ -29,7 +32,9 @@ const Header = () => {
       </div>
       <div className="flex gap-3 w-1/4 justify-center items-center">
         <Link to={"Cart"}>
-          <p>Cart</p>
+          <p>
+            Cart <span className="font-semibold">({cartItems.length})</span>
+          </p>
         </Link>
         {logBtn === "LoggedOut" ? (
           <button

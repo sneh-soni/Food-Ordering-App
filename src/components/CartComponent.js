@@ -1,15 +1,14 @@
 import { useDispatch } from "react-redux";
-import { addItem } from "../utils/cartSlice";
+import { removeItem } from "../utils/cartSlice";
 
-const RestaurentCard = (restaurent) => {
-  const tempRest = restaurent.restaurent;
-
+const CartComponent = (restaurent) => {
   const dispatch = useDispatch();
 
+  const tempRest = restaurent.restaurent;
   return (
-    <div className="h-fit border border-black p-1">
+    <div className="h-60 w-1/4 border border-black p-1">
       <img
-        className="h-1/2 border border-black bg-gray-200"
+        className="w-full border border-black bg-gray-200"
         src={tempRest.strCategoryThumb}
         alt={tempRest.strCategory}
       />
@@ -17,12 +16,13 @@ const RestaurentCard = (restaurent) => {
         <p className="text-xl font-bold ">{tempRest.strCategory}</p>
         <button
           className="p-2 font-semibold bg-green-300 text-xs"
-          onClick={() => dispatch(addItem(tempRest))}
+          onClick={() => dispatch(removeItem(tempRest))}
         >
-          Add Item
+          Remove Item
         </button>
       </div>
     </div>
   );
 };
-export default RestaurentCard;
+
+export default CartComponent;
