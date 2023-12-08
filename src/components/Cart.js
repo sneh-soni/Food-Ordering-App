@@ -8,8 +8,8 @@ const Cart = () => {
   return (
     <>
       <button
-        className="bg-red-300 m-2 p-2"
-        onclick={() => dispatch(emptyCart())}
+        className="bg-stone-300 m-2 p-2"
+        onClick={() => dispatch(emptyCart())}
       >
         Empty Cart
       </button>

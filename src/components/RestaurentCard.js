@@ -17,7 +17,10 @@ const RestaurentCard = (restaurent) => {
         <p className="text-xl font-bold ">{tempRest.strCategory}</p>
         <button
           className="p-2 font-semibold bg-green-300 text-xs"
-          onClick={() => dispatch(addItem(tempRest))}
+          onClick={(event) => {
+            dispatch(addItem(tempRest));
+            event.preventDefault();
+          }}
         >
           Add Item
         </button>
