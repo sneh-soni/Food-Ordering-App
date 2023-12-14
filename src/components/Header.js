@@ -14,6 +14,7 @@ const Header = () => {
           className="h-16 w-16"
           src="https://freesvg.org/img/chef-restaurant-logo-publicdomainvectors.png"
           alt="logo"
+          data-testid="Logo"
         />
         <h1 className="font-bold text-2xl">Food Villa</h1>
       </div>
@@ -32,7 +33,7 @@ const Header = () => {
       </div>
       <div className="flex gap-3 w-1/4 justify-center items-center">
         <Link to={"Cart"}>
-          <p>
+          <p data-testid="Cart">
             Cart <span className="font-semibold">({cartItems.length})</span>
           </p>
         </Link>

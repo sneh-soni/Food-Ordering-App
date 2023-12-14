@@ -14,12 +14,17 @@ const Search = ({ setRestaurentList, allRestaurents }) => {
     <div className="flex w-full justify-center my-5 gap-2">
       <input
         className="border border-black px-2"
+        data-testid="search-input"
         type="text"
         value={searchText}
         placeholder="search"
         onChange={(e) => setSearchText(e.target.value)}
       />
-      <button className="bg-gray-500 px-3 text-white" onClick={handleSearch}>
+      <button
+        data-testid="search-Btn"
+        className="bg-gray-500 px-3 text-white"
+        onClick={handleSearch}
+      >
         Search
       </button>
     </div>

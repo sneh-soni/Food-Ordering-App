@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Restaurents = ({ restaurentList }) => {
   return (
-    <div className="flex flex-wrap gap-3 px-5 w-full">
+    <div className="flex flex-wrap gap-3 px-5 w-full" data-testid="res-List">
       {restaurentList.length === 0 ? (
         <h1>No Restaurents Found</h1>
       ) : (

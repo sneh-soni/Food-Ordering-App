@@ -28,13 +28,13 @@ const Body = () => {
   return allRestaurents?.length === 0 ? (
     <Shimmer />
   ) : (
-    <>
+    <div data-testid="restaurents">
       <Search
         setRestaurentList={setRestaurentList}
         allRestaurents={allRestaurents}
       />
       <Restaurents restaurentList={restaurentList} />
-    </>
+    </div>
   );
 };
 

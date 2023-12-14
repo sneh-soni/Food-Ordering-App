@@ -16,6 +16,7 @@ const RestaurentCard = (restaurent) => {
       <div className="flex justify-between items-center my-1">
         <p className="text-xl font-bold ">{tempRest.strCategory}</p>
         <button
+          data-testid="addBtn"
           className="p-2 font-semibold bg-green-300 text-xs"
           onClick={(event) => {
             dispatch(addItem(tempRest));
