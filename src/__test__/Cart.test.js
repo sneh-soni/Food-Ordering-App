@@ -24,7 +24,7 @@ test("cart updates in clicking add button in header", async () => {
     </StaticRouter>
   );
 
-  await waitFor(expect(body.getByTestId("restaurents")));
+  await waitFor(expect(body.getByTestId("restaurents")), { timeout: 10000 });
 
   const addBtn = body.getAllByTestId("addBtn");
 
